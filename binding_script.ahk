@@ -36,6 +36,12 @@ return
     }
 return
 
+$Esc::
+    WinGetPos,,, X, Y, Program Manager
+    CoordMode, MouseMove
+    MouseMove, X, Y
+return
+
 #IfWinNotActive
 
 ; AutoHotkey Media Keys
