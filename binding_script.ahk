@@ -36,7 +36,7 @@ return
     }
 return
 
-$Esc::
+~Esc::
     CoordMode, MouseMove
     MouseMove, A_ScreenWidth+10, A_ScreenHeight+10
 return
