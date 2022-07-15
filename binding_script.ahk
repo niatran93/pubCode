@@ -37,9 +37,8 @@ return
 return
 
 $Esc::
-    WinGetPos,,, X, Y, Program Manager
     CoordMode, MouseMove
-    MouseMove, X, Y
+    MouseMove, A_ScreenWidth+10, A_ScreenHeight+10
 return
 
 #IfWinNotActive
