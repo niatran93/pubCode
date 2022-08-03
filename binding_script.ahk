@@ -37,8 +37,8 @@ return
 return
 
 ~Esc::
-    CoordMode, MouseMove
-    MouseMove, A_ScreenWidth+10, A_ScreenHeight+10
+    CoordMode, Mouse
+    MouseMove, A_ScreenWidth, A_ScreenHeight
 return
 
 #IfWinNotActive
