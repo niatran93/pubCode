@@ -42,9 +42,9 @@ return
 LControl::`
 
 ; AutoHotkey Media Keys
-^<#Space::Send  {Media_Play_Pause} ; Ctrl + LWin + Space : Pause
-^<#j::Send      {Media_Prev}
-^<#k::Send      {Media_Next}
-^<#d::Send      {Volume_Mute}
-^<#s::Send      {Volume_Up}
-^<#a::Send      {Volume_Down}
+<!<#Space::Send  {Media_Play_Pause} ; LWin + LAlt + Space : Pause
+<!<#j::Send      {Media_Prev}
+<!<#k::Send      {Media_Next}
+<!<#d::Send      {Volume_Mute}
+<!<#s::Send      {Volume_Up}
+<!<#a::Send      {Volume_Down}
