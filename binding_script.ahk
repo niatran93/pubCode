@@ -10,6 +10,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; CapsLock = LCtrl when pressed
 ; CapsLock = ESC when pressed and released in under 1 sec
 
+#IfWinNotActive ahk_class VMUIFrame
+
 SetCapsLockState Off
 state:=false
 LShift & RShift::
@@ -33,6 +35,8 @@ return
             Suspend Off
     }
 return
+
+#IfWinNotActive
 
 ~Esc::
     CoordMode, Mouse
