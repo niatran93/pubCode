@@ -36,14 +36,14 @@ return
     }
 return
 
+LControl::`
+
 #IfWinNotActive
 
 ~Esc::
     CoordMode, Mouse
     MouseMove, A_ScreenWidth, A_ScreenHeight
 return
-
-LControl::`
 
 ; AutoHotkey Media Keys
 <!<#Space::Send  {Media_Play_Pause} ; LWin + LAlt + Space : Pause
