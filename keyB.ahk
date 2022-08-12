@@ -47,6 +47,15 @@ LControl::`
 
 #IfWinNotActive
 
+#IfWinNotActive ahk_exe dota2.exe
+
+~Esc::
+    CoordMode, Mouse
+    MouseMove, A_ScreenWidth, A_ScreenHeight
+return
+
+#IfWinNotActive
+
 #IfWinActive ahk_exe dota2.exe
 
 LWin::\
@@ -81,15 +90,6 @@ return
 ~Space::w
 
 #IfWinActive
-
-#IfWinNotActive ahk_exe dota2.exe
-
-~Esc::
-    CoordMode, Mouse
-    MouseMove, A_ScreenWidth, A_ScreenHeight
-return
-
-#IfWinNotActive
 
 ; AutoHotkey Media Keys
 <!<#Space::Send  {Media_Play_Pause} ; LWin + LAlt + Space : Pause
