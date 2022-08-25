@@ -7,12 +7,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 setTitleMatchMode, Regex
 
-setKeyDelay, 50, 50
-setMouseDelay, 50
-
-#maxThreadsPerHotkey, 2
-toggle:=0
-
 ; https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_Windows
 ; LShift + RShift = CapsLock
 ; CapsLock = LCtrl when pressed
@@ -56,41 +50,6 @@ LControl::`
 return
 
 #IfWinNotActive
-
-#IfWinActive ahk_exe dota2.exe
-
-LWin::\
-LShift & RShift::Capslock
-Capslock::Alt   ; make Caps Lock the alt button
-
-$Pause::
-    toggle:=!toggle
-
-    while (toggle=1)
-    {
-        ToolTip, ...........Auto-Accepting!!!
-        sleep, 1000
-        ToolTip
-        sleep, 1000
-    send,  {Enter}
-    }
-return
-
-$~Space::
-    while (getKeyState("Space", "P"))
-    {
-        send, {Space}
-        sleep, 100
-    }
-return
-
-#IfWinActive
-
-#IfWinActive ahk_exe VampireSurvivors.exe
-
-~Space::w
-
-#IfWinActive
 
 ; AutoHotkey Media Keys
 <!<#Space::Send  {Media_Play_Pause} ; LWin + LAlt + Space : Pause
