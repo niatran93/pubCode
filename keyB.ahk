@@ -5,6 +5,11 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+I_Icon = keyB.ico
+IfExist, %I_Icon%
+Menu, Tray, Icon, %I_Icon%
+;return
+
 setTitleMatchMode, Regex
 
 ; https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_Windows
@@ -12,7 +17,7 @@ setTitleMatchMode, Regex
 ; CapsLock = LCtrl when pressed
 ; CapsLock = ESC when pressed and released in under 1 sec
 
-#IfWinNotActive ahk_exe (vmware.exe|dota2.exe)
+#IfWinActive ahk_exe (firefox.exe|chrome.exe|notepad.exe|putty.exe)
 
 SetCapsLockState Off
 state:=false
@@ -40,16 +45,12 @@ return
 
 LControl::`
 
-#IfWinNotActive
-
-#IfWinNotActive ahk_exe dota2.exe
-
 ~Esc::
     CoordMode, Mouse
     MouseMove, A_ScreenWidth, A_ScreenHeight
 return
 
-#IfWinNotActive
+#IfWinActive
 
 ; AutoHotkey Media Keys
 <!<#Space::Send  {Media_Play_Pause} ; LWin + LAlt + Space : Pause
@@ -58,3 +59,5 @@ return
 <!<#d::Send      {Volume_Mute}
 <!<#s::Send      {Volume_Up}
 <!<#a::Send      {Volume_Down}
+
+~ScrollLock::Suspend
