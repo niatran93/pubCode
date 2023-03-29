@@ -5,6 +5,11 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+I_Icon = binding_script-dota2.ico
+IfExist, %I_Icon%
+Menu, Tray, Icon, %I_Icon%
+;return
+
 setTitleMatchMode, Regex
 
 setKeyDelay, 50, 50
@@ -15,9 +20,10 @@ toggle:=0
 
 #IfWinActive ahk_exe dota2.exe
 
-LWin::\
+LWin::return
 LShift & RShift::Capslock
-Capslock::Alt   ; make Caps Lock the alt button
+Capslock::\
+LAlt::\
 
 $Pause::
     toggle:=!toggle
