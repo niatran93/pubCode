@@ -25,16 +25,13 @@ LShift & RShift::Capslock
 Capslock::\
 LAlt::\
 
-$Pause::
+~ScrollLock::
     toggle:=!toggle
 
     while (toggle=1)
     {
-        ToolTip, ...........Auto-Accepting!!!
         sleep, 1000
-        ToolTip
-        sleep, 1000
-    send,  {Enter}
+    	send,  {Enter}
     }
 return
 
