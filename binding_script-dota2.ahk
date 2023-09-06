@@ -20,7 +20,7 @@ toggle:=0
 
 #IfWinActive ahk_exe dota2.exe
 
-LWin::return
+LWin::F1
 LShift & RShift::Capslock
 Capslock::\
 LAlt::\
