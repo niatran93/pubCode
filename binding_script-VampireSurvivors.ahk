@@ -8,6 +8,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.#Persiste
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+I_Icon = binding_script-VampireSurvivors.ico
+IfExist, %I_Icon%
+Menu, Tray, Icon, %I_Icon%
+;return
+
 setTitleMatchMode, Regex
 
 #IfWinActive ahk_exe VampireSurvivors.exe

@@ -12,12 +12,12 @@ Menu, Tray, Icon, %I_Icon%
 
 setTitleMatchMode, Regex
 
+#IfWinActive ahk_exe (chrome.exe|firefox.exe|edge.exe|putty.exe|notepad.exe|VSCodium.exe) ; (program1.exe|program2.exe)
+
 ; https://vim.fandom.com/wiki/Map_caps_lock_to_escape_in_Windows
 ; LShift + RShift = CapsLock
 ; CapsLock = LCtrl when pressed
 ; CapsLock = ESC when pressed and released in under 1 sec
-
-#IfWinActive ahk_exe (firefox.exe|chrome.exe|notepad.exe|putty.exe)
 
 SetCapsLockState Off
 state:=false
@@ -43,14 +43,12 @@ return
     }
 return
 
-LControl::`
+#IfWinActive
 
-~Esc::
+~#BS::
     CoordMode, Mouse
     MouseMove, A_ScreenWidth, A_ScreenHeight
 return
-
-#IfWinActive
 
 ; AutoHotkey Media Keys
 <!<#Space::Send  {Media_Play_Pause} ; LWin + LAlt + Space : Pause
@@ -60,4 +58,11 @@ return
 <!<#s::Send      {Volume_Up}
 <!<#a::Send      {Volume_Down}
 
-~ScrollLock::Suspend
+$Pause::Suspend
+
+; LWin + LAlt + Backspace = Turn off monitor
+!#BS::
+    SendMessage 0x112, 0xF140, 0, , Program Manager  ; Start screensaver
+    Sleep 1000
+    SendMessage 0x112, 0xF170, 2, , Program Manager  ; Monitor off
+return
